@@ -566,6 +566,7 @@
 				2A1C289B1B4CF22100859E69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A1C289C1B4CF22100859E69 /* Build configuration list for PBXNativeTarget "HelloAdjustTests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +575,7 @@
 				2A1C289E1B4CF22100859E69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

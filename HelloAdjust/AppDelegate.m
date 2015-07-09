@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Adjust.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSString *yourAppToken = @"gdj5tux3jndh";
+    NSString *environment = ADJEnvironmentSandbox;
+    ADJConfig *adjustConfig = [ADJConfig configWithAppToken:yourAppToken
+                                                environment:environment];
+    
+    [adjustConfig setDelegate:self];
+    [Adjust appDidLaunch:adjustConfig];
+    
     return YES;
+}
+
+- (void)adjustAttributionChanged:(ADJAttribution *)attribution {
+    NSString *campaign = attribution.campaign;
+    NSString *sourceID = attribution.network;
+    NSString *medium = attribution.trackerName;
+    
+    NSLog(@"This is Campaign: %@ Source : %@ Medium : %@", campaign, sourceID, medium);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
